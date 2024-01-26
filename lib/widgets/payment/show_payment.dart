@@ -10,7 +10,7 @@ class ShowPayment extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
-    return Container(
+    return SizedBox(
       height: 500,
       width: width,
       child: Padding(
@@ -38,15 +38,15 @@ class ShowPayment extends StatelessWidget {
                 )
               ],
             ),
-            PaymentMethod(
+            const PaymentMethod(
                 title: 'Apple Pay',
                 image: 'assets/pictures/apple_pay.png',
                 check: true),
-            PaymentMethod(
+            const PaymentMethod(
                 title: 'Visa/Mastercard',
                 image: 'assets/pictures/card.png',
                 check: false),
-            PaymentMethod(
+            const PaymentMethod(
                 title: 'PAYPAL',
                 image: 'assets/pictures/PayPal.png',
                 check: true),

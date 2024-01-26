@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 class CountryList extends StatelessWidget {
   final String searchQuery;
 
-  CountryList({required this.searchQuery, Key? key}) : super(key: key);
+  const CountryList({required this.searchQuery, Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +23,7 @@ class CountryList extends StatelessWidget {
           final countryCode = filteredCountries[index];
           return CountryHolder(countrycode: countryCode.toString());
         } else {
-          return SizedBox(
+          return const SizedBox(
             height: 400,
           );
         }

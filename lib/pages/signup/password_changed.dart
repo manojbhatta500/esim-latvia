@@ -1,8 +1,9 @@
 import 'package:esim/pages/signup/reset_password.dart';
-import 'package:esim/utils/constants.dart';
 import 'package:esim/widgets/signup_widgets/yello_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+
+//done completed
 
 class PasswrodChanged extends StatefulWidget {
   const PasswrodChanged({super.key});
@@ -17,46 +18,58 @@ class _PasswrodChangedState extends State<PasswrodChanged> {
     double height = MediaQuery.of(context).size.height;
     return SafeArea(
         child: Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          SizedBox(
-            height: 0.3 * height,
-          ),
-          SvgPicture.asset(
-            'assets/pictures/Group.svg',
-            width: 100,
-          ),
-          SizedBox(
-            height: 0.04 * height,
-          ),
-          Center(
-            child: Text(
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            SizedBox(
+              height: 0.3 * height,
+            ),
+            SvgPicture.asset(
+              'assets/pictures/Group.svg',
+              width: 100,
+            ),
+            SizedBox(
+              height: 0.04 * height,
+            ),
+            const Text(
               'Password changed',
-              style: blackbig,
+              style: TextStyle(
+                color: Colors.black,
+                fontSize: 30,
+                fontFamily: 'Poppins',
+                fontWeight: FontWeight.w700,
+                letterSpacing: -0.30,
+              ),
+              textAlign: TextAlign.center,
             ),
-          ),
-          SizedBox(
-            height: 0.01 * height,
-          ),
-          Center(
-            child: Text(
+            const SizedBox(
+              height: 13,
+            ),
+            Text(
               'Your password has been changed succesfully',
-              style: profilesmall,
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                color: Colors.black.withOpacity(0.699999988079071),
+                fontSize: 16,
+                fontFamily: 'Inter',
+                fontWeight: FontWeight.w400,
+              ),
             ),
-          ),
-          SizedBox(
-            height: 0.02 * height,
-          ),
-          GestureDetector(
-              onTap: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return ResetPassword();
-                }));
-              },
-              child: YelloButton(title: 'Back to login'))
-        ],
+            const SizedBox(
+              height: 30,
+            ),
+            GestureDetector(
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return const ResetPassword();
+                  }));
+                },
+                child: const YelloButton(title: 'Back to login'))
+          ],
+        ),
       ),
     ));
   }

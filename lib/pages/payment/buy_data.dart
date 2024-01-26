@@ -8,7 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class BuyData extends StatefulWidget {
-  BuyData({super.key, required this.countrycode});
+  const BuyData({super.key, required this.countrycode});
 
   final String countrycode;
 
@@ -19,6 +19,8 @@ class BuyData extends StatefulWidget {
 class _BuyDataState extends State<BuyData> {
   bool value = false;
 
+  int selectedIndex = -1;
+
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
@@ -26,6 +28,7 @@ class _BuyDataState extends State<BuyData> {
     return SafeArea(
         child: Scaffold(
       body: Container(
+        padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 5),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -79,17 +82,29 @@ class _BuyDataState extends State<BuyData> {
                         scrollDirection: Axis.horizontal,
                         child: Row(
                           children: [
-                            Sano(data: '3', days: '30', price: '9'),
-                            Sano(data: '3', days: '30', price: '9'),
-                            Sano(data: '3', days: '30', price: '9'),
-                            Sano(data: '3', days: '30', price: '9'),
-                            Sano(data: '3', days: '30', price: '9'),
-                            Sano(data: '3', days: '30', price: '9'),
-                            Sano(data: '3', days: '30', price: '9'),
+                            for (int i = 0; i < 7; i++)
+                              Sano(
+                                data: '3',
+                                days: '30',
+                                price: '9',
+                                indicator: selectedIndex == i,
+                                onTap: () {
+                                  setState(() {
+                                    selectedIndex = i;
+                                  });
+                                },
+                              ),
+                            // Sano(data: '3', days: '30', price: '9'),
+                            // Sano(data: '3', days: '30', price: '9'),
+                            // Sano(data: '3', days: '30', price: '9'),
+                            // Sano(data: '3', days: '30', price: '9'),
+                            // Sano(data: '3', days: '30', price: '9'),
+                            // Sano(data: '3', days: '30', price: '9'),
+                            // Sano(data: '3', days: '30', price: '9'),
                           ],
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       Center(
@@ -105,11 +120,11 @@ class _BuyDataState extends State<BuyData> {
                         children: [
                           Row(
                             children: [
-                              SizedBox(
+                              const SizedBox(
                                 width: 10,
                               ),
                               SvgPicture.asset('assets/pictures/wallet.svg'),
-                              SizedBox(
+                              const SizedBox(
                                 width: 10,
                               ),
                               Text(
@@ -135,7 +150,8 @@ class _BuyDataState extends State<BuyData> {
                 ),
                 Container(
                   height: 60,
-                  margin: EdgeInsets.symmetric(vertical: 5, horizontal: 5),
+                  margin:
+                      const EdgeInsets.symmetric(vertical: 5, horizontal: 5),
                   decoration:
                       BoxDecoration(borderRadius: BorderRadius.circular(20)),
                   child: Card(
@@ -147,7 +163,7 @@ class _BuyDataState extends State<BuyData> {
                           padding: const EdgeInsets.all(5.0),
                           child: Row(
                             children: [
-                              SizedBox(
+                              const SizedBox(
                                 width: 10,
                               ),
                               Text(
@@ -171,7 +187,7 @@ class _BuyDataState extends State<BuyData> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       SvgPicture.asset('assets/pictures/phone.svg'),
-                      Text(
+                      const Text(
                         'Esim only for internet (no phone number)',
                         style: TextStyle(
                           color: Colors.black,
@@ -184,9 +200,8 @@ class _BuyDataState extends State<BuyData> {
                     ],
                   ),
                 ),
-                Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 10.0, vertical: 5),
+                const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 5),
                   child: Text(
                     'By placing an order you confirm the following: Terms and Conditions and Privacy Policy ',
                     style: TextStyle(
@@ -198,9 +213,8 @@ class _BuyDataState extends State<BuyData> {
                     ),
                   ),
                 ),
-                Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 10.0, vertical: 5),
+                const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 5),
                   child: Text(
                     'Before finalising your order, please ensure that your device is eSIM compatible and not tied to an operator',
                     style: TextStyle(
@@ -214,7 +228,7 @@ class _BuyDataState extends State<BuyData> {
                 ),
               ],
             ),
-            Bottom()
+            const Bottom()
           ],
         ),
       ),

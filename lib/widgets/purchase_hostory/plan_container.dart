@@ -6,86 +6,72 @@ class PlanContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Card(
-        elevation: 6,
-        child: Container(
-            width: 320.0,
-            height: 150.0,
-            decoration: BoxDecoration(
-              color: Color.fromRGBO(217, 217, 217, 0.25),
-              borderRadius: BorderRadius.circular(5.0),
-              border: Border.all(color: Colors.black12, width: 1.0),
+      child: Container(
+          width: 320.0,
+          height: 100,
+          decoration: ShapeDecoration(
+            color: const Color(0x3FD9D9D9),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10),
             ),
-            child: Padding(
-              padding: const EdgeInsets.only(left: 10),
-              child: Row(
-                children: [
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    crossAxisAlignment: CrossAxisAlignment.start,
+          ),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 13),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text.rich(
+                  TextSpan(
                     children: [
-                      Text('Kargi Mobile / eSIM - Georgia',
-                          style: TextStyle(
-                            color: Color(0xff181D27),
-                            fontFamily: 'Inter',
-                            fontSize: 16.0,
-                            fontStyle: FontStyle.normal,
-                            fontWeight: FontWeight.w700,
-                          )),
-                      Text(
-                        '7 d. - Validity period',
+                      TextSpan(
+                        text: 'Kargi Mobile / eSIM - Georgia\n',
                         style: TextStyle(
-                          color: Colors.black45,
+                          color: Colors.black.withOpacity(0.5),
+                          fontSize: 12,
                           fontFamily: 'Inter',
-                          fontSize: 14.0,
-                          fontStyle: FontStyle.normal,
                           fontWeight: FontWeight.w700,
+                          height: 0,
                         ),
                       ),
-                      Text(
-                        '1 GB - Traffic',
+                      TextSpan(
+                        text:
+                            '\n7 d. - Validity period\n1 GB - Traffic\n16 aug. 2023, 09:17',
                         style: TextStyle(
-                          color: Colors.black45,
+                          color: Colors.black.withOpacity(0.5),
+                          fontSize: 12,
                           fontFamily: 'Inter',
-                          fontSize: 14.0,
-                          fontStyle: FontStyle.normal,
-                          fontWeight: FontWeight.w700,
-                        ),
-                      ),
-                      Text(
-                        '16 aug. 2023, 09:17',
-                        style: TextStyle(
-                          color: Colors.black45,
-                          fontFamily: 'Inter',
-                          fontSize: 14.0,
-                          fontStyle: FontStyle.normal,
-                          fontWeight: FontWeight.w700,
+                          fontWeight: FontWeight.w400,
+                          height: 0,
                         ),
                       ),
                     ],
                   ),
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Row(
-                        children: [
-                          Text(
-                            '4.00€',
-                            style: TextStyle(
-                                fontSize: 12.0, fontWeight: FontWeight.bold),
+                ),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Row(
+                      children: [
+                        const Text(
+                          '12.00€',
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 14,
+                            fontFamily: 'Inter',
+                            fontWeight: FontWeight.w700,
                           ),
-                          Image.asset(
-                            'assets/icons/arrow.png',
-                            width: 30,
-                          )
-                        ],
-                      )
-                    ],
-                  )
-                ],
-              ),
-            )),
-      ),
+                        ),
+                        Image.asset(
+                          'assets/icons/arrow.png',
+                          width: 30,
+                        )
+                      ],
+                    )
+                  ],
+                )
+              ],
+            ),
+          )),
     );
   }
 }

@@ -17,17 +17,20 @@ class _ResetPasswordState extends State<ResetPassword> {
     double height = MediaQuery.of(context).size.height;
     return SafeArea(
         child: Scaffold(
-      appBar: AppBar(
-        elevation: 0,
-        backgroundColor: Colors.white,
-        automaticallyImplyLeading: false,
-        leading: GestureDetector(
-          onTap: () {
-            Navigator.pop(context);
-          },
-          child: SvgPicture.asset(
-            'assets/icons/Back.svg',
-            width: 30,
+      resizeToAvoidBottomInset: true,
+      appBar: PreferredSize(
+        preferredSize: const Size.fromHeight(50.0),
+        child: AppBar(
+          backgroundColor: Colors.white,
+          automaticallyImplyLeading: false,
+          leading: GestureDetector(
+            onTap: () {
+              Navigator.pop(context);
+            },
+            child: SvgPicture.asset(
+              'assets/icons/Back.svg',
+              width: 30,
+            ),
           ),
         ),
       ),
@@ -35,79 +38,151 @@ class _ResetPasswordState extends State<ResetPassword> {
         color: Colors.white,
         width: double.infinity,
         height: double.infinity,
-        padding: EdgeInsets.only(top: 30, left: 15, right: 15, bottom: 10),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            SizedBox(
-              height: 0.1 * height,
-            ),
-            Text(
-              'Reset password',
-              style: blackbig,
-            ),
-            SizedBox(
-              height: 0.01 * height,
-            ),
-            Text(
-              "Please type something you'll remember",
-              style: TextStyle(
-                color: Color(0xffABABAB),
-                fontFamily: 'Inter',
-                fontSize: 16.0,
-                fontStyle: FontStyle.normal,
-                fontWeight: FontWeight.w400,
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 40),
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(
+                height: 0.1 * height,
               ),
-            ),
-            SizedBox(
-              height: 0.05 * height,
-            ),
-            Text(
-              'New password',
-              style: blackmiddle,
-            ),
-            SizedBox(
-              height: 0.01 * height,
-            ),
-            Container(
-                height: 60,
-                width: double.infinity,
+              const Text(
+                'Reset password',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 30,
+                  fontFamily: 'Poppins',
+                  fontWeight: FontWeight.w700,
+                  letterSpacing: -0.30,
+                ),
+              ),
+              const SizedBox(height: 15),
+              Text(
+                'Please type something you’ll remember',
+                style: TextStyle(
+                  color: Colors.black.withOpacity(0.69),
+                  fontSize: 16,
+                  fontFamily: 'Inter',
+                  fontWeight: FontWeight.w400,
+                ),
+              ),
+              const SizedBox(
+                height: 30,
+              ),
+              Text(
+                'New password',
+                style: blackmiddle,
+              ),
+              const SizedBox(
+                height: 5,
+              ),
+              Container(
+                height: 56,
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 15,
+                ),
+                decoration: ShapeDecoration(
+                  color: Colors.white,
+                  shape: RoundedRectangleBorder(
+                    side: const BorderSide(width: 1, color: Color(0xFFD8DADC)),
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                ),
                 child: TextField(
                   decoration: InputDecoration(
                       hintText: 'must be 8 characters',
-                      suffixIcon: Icon(Icons.remove_red_eye),
-                      border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10))),
-                )),
-            SizedBox(
-              height: 0.05 * height,
-            ),
-            Text(
-              'Confirm new password',
-              style: blackmiddle,
-            ),
-            SizedBox(
-              height: 0.01 * height,
-            ),
-            Container(
-                height: 60,
-                width: double.infinity,
+                      hintStyle: TextStyle(
+                        color: Colors.black.withOpacity(0.5),
+                        fontSize: 16,
+                        fontFamily: 'Inter',
+                        fontWeight: FontWeight.w400,
+                        height: 0.08,
+                      ),
+                      suffixIcon: const Icon(Icons.remove_red_eye),
+                      border: InputBorder.none),
+                ),
+              ),
+              const SizedBox(
+                height: 22,
+              ),
+              Text(
+                'Confirm new password',
+                style: blackmiddle,
+              ),
+              const SizedBox(
+                height: 5,
+              ),
+              Container(
+                height: 56,
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 15,
+                ),
+                decoration: ShapeDecoration(
+                  color: Colors.white,
+                  shape: RoundedRectangleBorder(
+                    side: const BorderSide(width: 1, color: Color(0xFFD8DADC)),
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                ),
                 child: TextField(
                   decoration: InputDecoration(
                       hintText: 'repeat password',
-                      suffixIcon: Icon(Icons.remove_red_eye),
-                      border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10))),
-                )),
-            GestureDetector(
-                onTap: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) {
-                    return PinCode();
-                  }));
-                },
-                child: YelloButton(title: 'Reset password'))
-          ],
+                      hintStyle: TextStyle(
+                        color: Colors.black.withOpacity(0.5),
+                        fontSize: 16,
+                        fontFamily: 'Inter',
+                        fontWeight: FontWeight.w400,
+                        height: 0.08,
+                      ),
+                      suffixIcon: const Icon(Icons.remove_red_eye),
+                      border: InputBorder.none),
+                ),
+              ),
+              const SizedBox(
+                height: 40,
+              ),
+              GestureDetector(
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return const PinCode();
+                    }));
+                  },
+                  child: const YelloButton(title: 'Reset password')),
+            ],
+          ),
+        ),
+      ),
+      bottomNavigationBar: Container(
+        height: 50,
+        color: Colors.white,
+        child: Align(
+          alignment: Alignment.topCenter,
+          child: Text.rich(
+            TextSpan(
+              children: [
+                TextSpan(
+                  text: 'Already have an account? ',
+                  style: TextStyle(
+                    color: Colors.black.withOpacity(0.699999988079071),
+                    fontSize: 14,
+                    fontFamily: 'Inter',
+                    fontWeight: FontWeight.w400,
+                  ),
+                ),
+                const TextSpan(
+                  text: 'Log in',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 14,
+                    fontFamily: 'Inter',
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+              ],
+            ),
+          ),
         ),
       ),
     ));

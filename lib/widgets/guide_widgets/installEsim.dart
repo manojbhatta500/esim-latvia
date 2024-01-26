@@ -9,7 +9,7 @@ class InstallESIMProfileWidget extends StatelessWidget {
     return Card(
       elevation: 10,
       child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 20),
+        padding: const EdgeInsets.symmetric(horizontal: 20),
         width: 280.0,
         height: 200.0,
         decoration: BoxDecoration(
@@ -20,7 +20,7 @@ class InstallESIMProfileWidget extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             SizedBox(height: 0.02 * height),
-            Text(
+            const Text(
               'Step 1 of 2',
               style: TextStyle(
                   fontSize: 16.0,
@@ -28,7 +28,7 @@ class InstallESIMProfileWidget extends StatelessWidget {
                   color: Colors.amber),
             ),
             SizedBox(height: 0.03 * height),
-            Text(
+            const Text(
               'Click “Install” and allow access to profiles',
               style: TextStyle(fontSize: 16.0),
               textAlign: TextAlign.center,
@@ -37,11 +37,11 @@ class InstallESIMProfileWidget extends StatelessWidget {
             Container(
               width: double.infinity,
               height: 40,
-              margin: EdgeInsets.symmetric(horizontal: 20),
+              margin: const EdgeInsets.symmetric(horizontal: 20),
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
-                  color: Color(0xffD9D9D9)),
-              child: Center(
+                  color: const Color(0xffD9D9D9)),
+              child: const Center(
                 child: Text(
                   'Install',
                   style: TextStyle(fontSize: 16.0),

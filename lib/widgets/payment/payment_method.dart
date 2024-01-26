@@ -19,28 +19,28 @@ class PaymentMethod extends StatelessWidget {
     return Container(
       width: width,
       height: 0.1 * height,
-      margin: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+      margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
       decoration: BoxDecoration(
-          color: Color.fromRGBO(217, 217, 217, 0.25),
+          color: const Color.fromRGBO(217, 217, 217, 0.25),
           borderRadius: BorderRadius.circular(15)),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           Image.asset(
-            '$image',
+            image,
             width: 80,
           ),
-          SizedBox(
+          const SizedBox(
             width: 15,
           ),
           Text(
-            '$title',
+            title,
             style: blackmiddle,
           ),
-          SizedBox(
+          const SizedBox(
             width: 15,
           ),
-          check ? Inside() : Image.asset('assets/icons/arrow.png'),
+          check ? const Inside() : Image.asset('assets/icons/arrow.png'),
         ],
       ),
     );

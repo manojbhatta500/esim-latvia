@@ -30,7 +30,8 @@ class _ProfileState extends State<Profile> {
       ),
       body: Container(
         color: Colors.white,
-        padding: EdgeInsets.only(top: 30, left: 15, right: 15, bottom: 10),
+        padding:
+            const EdgeInsets.only(top: 30, left: 15, right: 15, bottom: 10),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -38,178 +39,49 @@ class _ProfileState extends State<Profile> {
               'Profile',
               style: blackbig,
             ),
-            SizedBox(
+            const SizedBox(
               height: 50,
             ),
             Container(
-              margin: EdgeInsets.symmetric(vertical: 10, horizontal: 5),
-              child: Card(
-                  elevation: 12,
-                  child: Column(
-                    children: [
-                      GestureDetector(
-                        onTap: () {
-                          Navigator.pushNamed(context, '/purchase');
-                        },
-                        child: Container(
-                          height: 60,
-                          child: Padding(
-                            padding: const EdgeInsets.symmetric(
-                                vertical: 8, horizontal: 5),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Padding(
-                                  padding: const EdgeInsets.all(5.0),
-                                  child: Row(
-                                    children: [
-                                      Container(
-                                          margin: EdgeInsets.symmetric(
-                                              horizontal: 10),
-                                          child: SvgPicture.asset(
-                                              'assets/icons/purchase.svg')),
-                                      SizedBox(
-                                        width: 10,
-                                      ),
-                                      Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          Text(
-                                            'Purchase history',
-                                            style: profilebig,
-                                          ),
-                                          Text(
-                                            'See all history of purchases',
-                                            style: profilesmall,
-                                          )
-                                        ],
-                                      )
-                                    ],
-                                  ),
-                                ),
-                                Row(
-                                  children: [
-                                    Image.asset('assets/icons/arrow.png')
-                                  ],
-                                )
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                      Container(
-                        height: 60,
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(
-                              vertical: 8, horizontal: 5),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.all(5.0),
-                                child: Row(
-                                  children: [
-                                    Container(
-                                      margin:
-                                          EdgeInsets.symmetric(horizontal: 10),
-                                      child: SvgPicture.asset(
-                                          'assets/icons/about.svg'),
-                                    ),
-                                    SizedBox(
-                                      width: 10,
-                                    ),
-                                    Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Text(
-                                          'About eSIM app',
-                                          style: profilebig,
-                                        ),
-                                        Text(
-                                          'information about application',
-                                          style: profilesmall,
-                                        )
-                                      ],
-                                    )
-                                  ],
-                                ),
-                              ),
-                              Row(
+              margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 5),
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  boxShadow: [
+                    BoxShadow(
+                        color: Colors.grey.withOpacity(0.3),
+                        blurRadius: 5,
+                        spreadRadius: 3,
+                        offset: const Offset(0, 0))
+                  ]),
+              child: Column(
+                children: [
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pushNamed(context, '/purchase');
+                    },
+                    child: Container(
+                      height: 60,
+                      decoration: const BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(10),
+                              topRight: Radius.circular(10))),
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(
+                            vertical: 8, horizontal: 5),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.all(5.0),
+                              child: Row(
                                 children: [
-                                  Image.asset('assets/icons/arrow.png')
-                                ],
-                              )
-                            ],
-                          ),
-                        ),
-                      ),
-                      Container(
-                        height: 60,
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(
-                              vertical: 8, horizontal: 5),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.all(5.0),
-                                child: Row(
-                                  children: [
-                                    Container(
-                                      margin:
-                                          EdgeInsets.symmetric(horizontal: 10),
-                                      child: SvgPicture.asset(
-                                          'assets/icons/rating.svg'),
-                                    ),
-                                    SizedBox(
-                                      width: 10,
-                                    ),
-                                    Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Text(
-                                          'Rate our App',
-                                          style: profilebig,
-                                        ),
-                                        Text(
-                                          'rate our app and make review',
-                                          style: profilesmall,
-                                        )
-                                      ],
-                                    )
-                                  ],
-                                ),
-                              ),
-                              Row(
-                                children: [
-                                  Image.asset('assets/icons/arrow.png')
-                                ],
-                              )
-                            ],
-                          ),
-                        ),
-                      ),
-                      Container(
-                        height: 60,
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(
-                              vertical: 8, horizontal: 5),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.all(5.0),
-                                child: Row(children: [
                                   Container(
-                                    margin:
-                                        EdgeInsets.symmetric(horizontal: 10),
-                                    child: SvgPicture.asset(
-                                        'assets/icons/language.svg'),
-                                  ),
-                                  SizedBox(
+                                      margin: const EdgeInsets.symmetric(
+                                          horizontal: 10),
+                                      child: SvgPicture.asset(
+                                          'assets/icons/purchase.svg')),
+                                  const SizedBox(
                                     width: 10,
                                   ),
                                   Column(
@@ -217,80 +89,216 @@ class _ProfileState extends State<Profile> {
                                         CrossAxisAlignment.start,
                                     children: [
                                       Text(
-                                        'Language',
+                                        'Purchase history',
                                         style: profilebig,
                                       ),
                                       Text(
-                                        'Choose language of application',
+                                        'See all history of purchases',
                                         style: profilesmall,
                                       )
                                     ],
                                   )
-                                ]),
-                              ),
-                              Row(
-                                children: [
-                                  Image.asset('assets/icons/arrow.png')
                                 ],
-                              )
-                            ],
-                          ),
+                              ),
+                            ),
+                            Row(
+                              children: [Image.asset('assets/icons/arrow.png')],
+                            )
+                          ],
                         ),
                       ),
-                      GestureDetector(
-                        onTap: () {
-                          Navigator.pushNamed(context, '/pc');
-                        },
-                        child: Container(
-                          height: 60,
-                          child: Padding(
-                            padding: const EdgeInsets.symmetric(
-                                vertical: 8, horizontal: 5),
+                    ),
+                  ),
+                  Container(
+                    height: 60,
+                    color: Colors.white,
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(
+                          vertical: 8, horizontal: 5),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.all(5.0),
                             child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Padding(
-                                  padding: const EdgeInsets.all(5.0),
-                                  child: Row(
-                                    children: [
-                                      Container(
-                                        margin: EdgeInsets.symmetric(
-                                            horizontal: 10),
-                                        child: SvgPicture.asset(
-                                            'assets/icons/logout.svg'),
-                                      ),
-                                      SizedBox(
-                                        width: 10,
-                                      ),
-                                      Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          Text(
-                                            'Log out',
-                                            style: profilebig,
-                                          ),
-                                          Text(
-                                            'secure your account for safety',
-                                            style: profilesmall,
-                                          )
-                                        ],
-                                      )
-                                    ],
-                                  ),
+                                Container(
+                                  margin: const EdgeInsets.symmetric(
+                                      horizontal: 10),
+                                  child: SvgPicture.asset(
+                                      'assets/icons/about.svg'),
                                 ),
-                                Row(
+                                const SizedBox(
+                                  width: 10,
+                                ),
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    Image.asset('assets/icons/arrow.png')
+                                    Text(
+                                      'About eSIM app',
+                                      style: profilebig,
+                                    ),
+                                    Text(
+                                      'information about application',
+                                      style: profilesmall,
+                                    )
                                   ],
                                 )
                               ],
                             ),
                           ),
+                          Row(
+                            children: [Image.asset('assets/icons/arrow.png')],
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                  Container(
+                    height: 60,
+                    color: Colors.white,
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(
+                          vertical: 8, horizontal: 5),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.all(5.0),
+                            child: Row(
+                              children: [
+                                Container(
+                                  margin: const EdgeInsets.symmetric(
+                                      horizontal: 10),
+                                  child: SvgPicture.asset(
+                                      'assets/icons/rating.svg'),
+                                ),
+                                const SizedBox(
+                                  width: 10,
+                                ),
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      'Rate our App',
+                                      style: profilebig,
+                                    ),
+                                    Text(
+                                      'rate our app and make review',
+                                      style: profilesmall,
+                                    )
+                                  ],
+                                )
+                              ],
+                            ),
+                          ),
+                          Row(
+                            children: [Image.asset('assets/icons/arrow.png')],
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                  Container(
+                    height: 60,
+                    color: Colors.white,
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(
+                          vertical: 8, horizontal: 5),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.all(5.0),
+                            child: Row(children: [
+                              Container(
+                                margin:
+                                    const EdgeInsets.symmetric(horizontal: 10),
+                                child: SvgPicture.asset(
+                                    'assets/icons/language.svg'),
+                              ),
+                              const SizedBox(
+                                width: 10,
+                              ),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    'Language',
+                                    style: profilebig,
+                                  ),
+                                  Text(
+                                    'Choose language of application',
+                                    style: profilesmall,
+                                  )
+                                ],
+                              )
+                            ]),
+                          ),
+                          Row(
+                            children: [Image.asset('assets/icons/arrow.png')],
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pushNamed(context, '/pc');
+                    },
+                    child: Container(
+                      height: 60,
+                      decoration: const BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.only(
+                              bottomLeft: Radius.circular(10),
+                              bottomRight: Radius.circular(10))),
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(
+                            vertical: 8, horizontal: 5),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.all(5.0),
+                              child: Row(
+                                children: [
+                                  Container(
+                                    margin: const EdgeInsets.symmetric(
+                                        horizontal: 10),
+                                    child: SvgPicture.asset(
+                                        'assets/icons/logout.svg'),
+                                  ),
+                                  const SizedBox(
+                                    width: 10,
+                                  ),
+                                  Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        'Log out',
+                                        style: profilebig,
+                                      ),
+                                      Text(
+                                        'secure your account for safety',
+                                        style: profilesmall,
+                                      )
+                                    ],
+                                  )
+                                ],
+                              ),
+                            ),
+                            Row(
+                              children: [Image.asset('assets/icons/arrow.png')],
+                            )
+                          ],
                         ),
                       ),
-                    ],
-                  )),
+                    ),
+                  ),
+                ],
+              ),
             )
           ],
         ),

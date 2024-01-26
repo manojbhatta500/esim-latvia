@@ -28,11 +28,11 @@ class _HelpState extends State<Help> {
                 style: black20,
               ),
             ),
-            upper(),
-            SizedBox(
+            const upper(),
+            const SizedBox(
               height: 20,
             ),
-            lower()
+            const lower()
           ],
         ),
       ),

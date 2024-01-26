@@ -37,7 +37,7 @@ class _InstallState extends State<Install> {
           color: Colors.white,
           width: double.infinity,
           height: double.infinity,
-          padding: EdgeInsets.only(top: 30, left: 15, right: 15, bottom: 10),
+          padding: const EdgeInsets.only(top: 30, left: 15, right: 15, bottom: 10),
           child: SingleChildScrollView(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
@@ -54,18 +54,18 @@ class _InstallState extends State<Install> {
                   height: 0.02 * height,
                 ),
                 Container(
-                  margin: EdgeInsets.symmetric(vertical: 3, horizontal: 10),
+                  margin: const EdgeInsets.symmetric(vertical: 3, horizontal: 10),
                   height: 40,
                   decoration: BoxDecoration(
-                      color: Color(0xffD9D9D9),
+                      color: const Color(0xffD9D9D9),
                       border: Border.all(color: Colors.black12),
                       borderRadius: BorderRadius.circular(10)),
                   child: TabBar(
                     indicator: BoxDecoration(
                         borderRadius:
                             BorderRadius.circular(10), // Creates border
-                        color: Color(0xffFFFFFF)),
-                    tabs: [
+                        color: const Color(0xffFFFFFF)),
+                    tabs: const [
                       Tab(
                           child: Center(
                               child: Text(
@@ -107,7 +107,7 @@ class _InstallState extends State<Install> {
                 ),
                 SizedBox(
                   height: 0.65 * height,
-                  child: TabBarView(
+                  child: const TabBarView(
                     children: [
                       Fast(),
                       Text('adsa'),

@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:country_flags/country_flags.dart';
 
 class CountryHolder extends StatelessWidget {
-  CountryHolder({required this.countrycode});
+  const CountryHolder({super.key, required this.countrycode});
 
   final String countrycode;
 
@@ -20,36 +20,46 @@ class CountryHolder extends StatelessWidget {
       },
       child: Container(
         height: 70,
-        margin: EdgeInsets.symmetric(vertical: 5, horizontal: 5),
-        child: Card(
-          elevation: 8,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(5.0),
-                child: Row(
-                  children: [
-                    Container(
-                      margin: EdgeInsets.symmetric(horizontal: 10),
-                      child:
-                          CountryFlag.fromCountryCode(countrycode, width: 40),
-                    ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    Text(
-                      countryNames[countrycode] ?? 'unknown name',
-                      style: blacknormal,
-                    ),
-                  ],
-                ),
+        margin: const EdgeInsets.symmetric(vertical: 5, horizontal: 5),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius:
+              BorderRadius.circular(10), // Set your desired background color
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey.withOpacity(
+                  0.3), // You can adjust the color and opacity here
+              spreadRadius: 2,
+              blurRadius: 7,
+              offset: const Offset(0, 0), // changes the position of the shadow
+            ),
+          ],
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(5.0),
+              child: Row(
+                children: [
+                  Container(
+                    margin: const EdgeInsets.symmetric(horizontal: 10),
+                    child: CountryFlag.fromCountryCode(countrycode, width: 40),
+                  ),
+                  const SizedBox(
+                    width: 10,
+                  ),
+                  Text(
+                    countryNames[countrycode] ?? 'unknown name',
+                    style: blacknormal,
+                  ),
+                ],
               ),
-              Row(
-                children: [Image.asset('assets/icons/arrow.png')],
-              )
-            ],
-          ),
+            ),
+            Row(
+              children: [Image.asset('assets/icons/arrow.png')],
+            )
+          ],
         ),
       ),
     );

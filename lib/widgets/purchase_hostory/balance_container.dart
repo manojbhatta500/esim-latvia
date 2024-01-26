@@ -6,72 +6,72 @@ class BalanceContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Card(
-        elevation: 6,
-        child: Container(
-            width: 300.0,
-            height: 100.0,
-            decoration: BoxDecoration(
-              color: Color.fromRGBO(217, 217, 217, 0.25),
-              borderRadius: BorderRadius.circular(5.0),
-              border: Border.all(color: Colors.black12, width: 1.0),
+      child: Container(
+          width: 345,
+          height: 70,
+          decoration: ShapeDecoration(
+            color: const Color(0x3FD9D9D9),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10),
             ),
-            child: Padding(
-              padding: const EdgeInsets.only(left: 10),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.start,
+          ),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 13, vertical: 10),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text.rich(
+                  TextSpan(
                     children: [
-                      Text('Apple pay ',
-                          style: TextStyle(
-                            color: Color(0xff181D27),
-                            fontFamily: 'Inter',
-                            fontSize: 16.0,
-                            fontStyle: FontStyle.normal,
-                            fontWeight: FontWeight.w700,
-                          )),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Text(
-                        '12 aug. 2023, 09:17',
+                      TextSpan(
+                        text: 'Apple pay\n',
                         style: TextStyle(
-                          color: Colors.black45,
+                          color: Colors.black.withOpacity(0.5),
+                          fontSize: 12,
                           fontFamily: 'Inter',
-                          fontSize: 14.0,
-                          fontStyle: FontStyle.normal,
                           fontWeight: FontWeight.w700,
+                          height: 0,
+                        ),
+                      ),
+                      TextSpan(
+                        text: '\n12 aug. 2023, 09:17',
+                        style: TextStyle(
+                          color: Colors.black.withOpacity(0.5),
+                          fontSize: 12,
+                          fontFamily: 'Inter',
+                          fontWeight: FontWeight.w400,
+                          height: 0,
                         ),
                       ),
                     ],
                   ),
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Row(
-                        children: [
-                          Text(
-                            '4.00€',
-                            style: TextStyle(
-                                color: Color(0xff1AC221),
-                                fontSize: 12.0,
-                                fontWeight: FontWeight.bold),
+                ),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Row(
+                      children: [
+                        const Text(
+                          '+15.00€',
+                          style: TextStyle(
+                            color: Color(0xFF19C120),
+                            fontSize: 14,
+                            fontFamily: 'Inter',
+                            fontWeight: FontWeight.w700,
+                            height: 0,
                           ),
-                          Image.asset(
-                            'assets/icons/arrow.png',
-                            width: 30,
-                          )
-                        ],
-                      )
-                    ],
-                  )
-                ],
-              ),
-            )),
-      ),
+                        ),
+                        Image.asset(
+                          'assets/icons/arrow.png',
+                          width: 30,
+                        )
+                      ],
+                    )
+                  ],
+                )
+              ],
+            ),
+          )),
     );
   }
 }

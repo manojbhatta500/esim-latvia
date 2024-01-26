@@ -14,7 +14,7 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   int _selectedIndex = 0;
 
-  final List<Widget> _pages = [Shop(), Internet(), Help()];
+  final List<Widget> _pages = [const Shop(), const Internet(), const Help()];
 
   void _onItemTapped(int index) {
     setState(() {

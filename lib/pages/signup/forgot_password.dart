@@ -1,6 +1,4 @@
 import 'package:esim/pages/home.dart';
-import 'package:esim/pages/signup/create_account.dart';
-import 'package:esim/utils/constants.dart';
 import 'package:esim/widgets/signup_widgets/yello_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -36,83 +34,121 @@ class _ForgotPasswordState extends State<ForgotPassword> {
         color: Colors.white,
         width: double.infinity,
         height: double.infinity,
-        padding: EdgeInsets.only(top: 30, left: 15, right: 15, bottom: 10),
+        padding: const EdgeInsets.symmetric(
+          horizontal: 20,
+        ),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
+            SizedBox(
+              height: 0.1 * height,
+            ),
+            const Text(
+              'Forgot password?',
+              style: TextStyle(
+                color: Colors.black,
+                fontSize: 30,
+                fontFamily: 'Poppins',
+                fontWeight: FontWeight.w700,
+                letterSpacing: -0.30,
+              ),
+            ),
+            const SizedBox(
+              height: 13,
+            ),
+            Text(
+              'Don’t worry! It happens. Please enter the email associated with your account.',
+              style: TextStyle(
+                color: Colors.black.withOpacity(0.699999988079071),
+                fontSize: 16,
+                fontFamily: 'Inter',
+                fontWeight: FontWeight.w400,
+              ),
+            ),
+            const SizedBox(
+              height: 35,
+            ),
+            const Text(
+              'Email address',
+              style: TextStyle(
+                color: Colors.black,
+                fontSize: 14,
+                fontFamily: 'Inter',
+                fontWeight: FontWeight.w400,
+                height: 0.09,
+              ),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            Container(
+              height: 56,
+              padding: const EdgeInsets.symmetric(
+                horizontal: 15,
+              ),
+              decoration: ShapeDecoration(
+                color: Colors.white,
+                shape: RoundedRectangleBorder(
+                  side: const BorderSide(width: 1, color: Color(0xFFD8DADC)),
+                  borderRadius: BorderRadius.circular(10),
+                ),
+              ),
+              child: TextField(
+                decoration: InputDecoration(
+                    hintText: 'Enter your email address',
+                    hintStyle: TextStyle(
+                      color: Colors.black.withOpacity(0.5),
+                      fontSize: 16,
+                      fontFamily: 'Inter',
+                      fontWeight: FontWeight.w400,
+                      height: 0.08,
+                    ),
+                    border: InputBorder.none),
+              ),
+            ),
+            SizedBox(
+              height: 0.05 * height,
+            ),
+            GestureDetector(
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return const Home();
+                  }));
+                },
+                child: const YelloButton(title: 'Send code')),
+          ],
+        ),
+      ),
+      bottomNavigationBar: Container(
+        height: 50,
+        color: Colors.white,
+        child: Align(
+          alignment: Alignment.topCenter,
+          child: Text.rich(
+            TextSpan(
               children: [
-                SizedBox(
-                  height: 0.1 * height,
-                ),
-                Text(
-                  'Forgot password?',
-                  style: blackbig,
-                ),
-                SizedBox(
-                  height: 0.01 * height,
-                ),
-                Text(
-                  "Don't worry! It happens. Please enter the email associated with your account.",
+                TextSpan(
+                  text: 'Remember password? ',
                   style: TextStyle(
-                    color: Color(0xffABABAB),
+                    color: Colors.black.withOpacity(0.699999988079071),
+                    fontSize: 14,
                     fontFamily: 'Inter',
-                    fontSize: 16.0,
-                    fontStyle: FontStyle.normal,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
-                SizedBox(
-                  height: 0.05 * height,
+                const TextSpan(
+                  text: ' Log in',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 14,
+                    fontFamily: 'Inter',
+                    fontWeight: FontWeight.w600,
+                  ),
                 ),
-                Text(
-                  'Email address',
-                  style: blackmiddle,
-                ),
-                SizedBox(
-                  height: 0.01 * height,
-                ),
-                Container(
-                    height: 60,
-                    width: double.infinity,
-                    child: TextField(
-                      decoration: InputDecoration(
-                          hintText: 'Enter your email address',
-                          border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(10))),
-                    )),
-                SizedBox(
-                  height: 0.05 * height,
-                ),
-                GestureDetector(
-                    onTap: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) {
-                        return Home();
-                      }));
-                    },
-                    child: YelloButton(title: 'Reset password')),
               ],
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  'Remember password? ',
-                  style: profilesmall,
-                ),
-                TextButton(
-                    onPressed: null,
-                    child: Text(
-                      'Log in',
-                      style: blacknormal,
-                    ))
-              ],
-            )
-          ],
+          ),
         ),
       ),
     ));

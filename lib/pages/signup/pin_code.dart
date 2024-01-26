@@ -1,5 +1,4 @@
 import 'package:esim/pages/signup/forgot_password.dart';
-import 'package:esim/utils/constants.dart';
 import 'package:esim/widgets/signup_widgets/yello_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -7,6 +6,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_pin_code_fields/flutter_pin_code_fields.dart';
 
 class PinCode extends StatefulWidget {
+  const PinCode({super.key});
+
   @override
   State<PinCode> createState() => _PinCodeState();
 }
@@ -37,66 +38,108 @@ class _PinCodeState extends State<PinCode> {
         color: Colors.white,
         width: double.infinity,
         height: double.infinity,
-        padding: EdgeInsets.only(top: 30, left: 15, right: 15, bottom: 10),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            SizedBox(
-              height: 0.1 * height,
-            ),
-            Text(
-              'Please check your email',
-              style: blackbig,
-            ),
-            SizedBox(
-              height: 0.01 * height,
-            ),
-            Text(
-              "We've sent a code to helloworld@gmail.com",
-              style: TextStyle(
-                color: Color(0xffABABAB),
-                fontFamily: 'Inter',
-                fontSize: 16.0,
-                fontStyle: FontStyle.normal,
-                fontWeight: FontWeight.w400,
+        padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(
+                height: 0.08 * height,
               ),
-            ),
-            SizedBox(
-              height: 0.1 * height,
-            ),
-            PinCodeFields(
-              length: 4,
-              fieldBorderStyle: FieldBorderStyle.square,
-              fieldHeight: 70.0,
-              fieldWidth: 50.0,
-              borderWidth: 1.0,
-              controller: _pinCodeController,
-              onComplete: (result) {},
-            ),
-            SizedBox(
-              height: 0.1 * height,
-            ),
-            GestureDetector(
-                onTap: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) {
-                    return ForgotPassword();
-                  }));
-                },
-                child: YelloButton(title: 'Reset password')),
-            Center(
-              child: Text(
-                'Send code again: 00:20',
+              const Text(
+                'Please check your email',
                 style: TextStyle(
-                  color: Color(0xffABABAB),
-                  fontFamily: 'Inter',
-                  fontSize: 12.0,
-                  fontStyle: FontStyle.normal,
-                  fontWeight: FontWeight.w400,
+                  color: Colors.black,
+                  fontSize: 30,
+                  fontFamily: 'Poppins',
+                  fontWeight: FontWeight.w700,
+                  letterSpacing: -0.30,
                 ),
               ),
-            ),
-          ],
+              const SizedBox(
+                height: 12,
+              ),
+              Text.rich(
+                TextSpan(
+                  children: [
+                    TextSpan(
+                      text: 'We’ve sent a code to ',
+                      style: TextStyle(
+                        color: Colors.black.withOpacity(0.699999988079071),
+                        fontSize: 16,
+                        fontFamily: 'Inter',
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
+                    const TextSpan(
+                      text: 'helloworld@gmail.com',
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 16,
+                        fontFamily: 'Inter',
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(
+                height: 40,
+              ),
+              PinCodeFields(
+                length: 4,
+                fieldBorderStyle: FieldBorderStyle.square,
+                fieldHeight: 70.0,
+                fieldWidth: 50.0,
+                borderWidth: 1.0,
+                controller: _pinCodeController,
+                onComplete: (result) {},
+              ),
+              SizedBox(
+                height: 0.1 * height,
+              ),
+              GestureDetector(
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return const ForgotPassword();
+                    }));
+                  },
+                  child: const YelloButton(title: 'Verify')),
+              const SizedBox(
+                height: 40,
+              ),
+              Center(
+                child: Text.rich(
+                  TextSpan(
+                    children: [
+                      TextSpan(
+                        text: 'Send code again',
+                        style: TextStyle(
+                          color: Colors.black.withOpacity(0.699999988079071),
+                          fontSize: 16,
+                          fontFamily: 'Inter',
+                          fontWeight: FontWeight.w600,
+                          height: 0.08,
+                        ),
+                      ),
+                      TextSpan(
+                        text: ' 00:20',
+                        style: TextStyle(
+                          color: Colors.black.withOpacity(0.699999988079071),
+                          fontSize: 16,
+                          fontFamily: 'Inter',
+                          fontWeight: FontWeight.w400,
+                          height: 0.08,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     ));

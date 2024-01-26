@@ -1,5 +1,4 @@
 import 'package:esim/pages/signup/choose.dart';
-import 'package:esim/utils/constants.dart';
 import 'package:esim/widgets/signup_widgets/yello_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -17,105 +16,163 @@ class _CreateAccountState extends State<CreateAccount> {
     double height = MediaQuery.of(context).size.height;
     return SafeArea(
         child: Scaffold(
-      backgroundColor: Color(0xffF0F3FB),
+      backgroundColor: const Color.fromRGBO(255, 255, 255, 1),
       body: Container(
-        padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
-        decoration: BoxDecoration(
-            color: Color(0xffF0F3FB), borderRadius: BorderRadius.circular(8)),
+        margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 15),
+        padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+        clipBehavior: Clip.antiAlias,
+        decoration: ShapeDecoration(
+          color: const Color(0xffF0F3FB),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(32),
+          ),
+        ),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Column(
-              children: [
-                SizedBox(
-                  height: 0.03 * height,
-                ),
-                SvgPicture.asset(
-                  'assets/pictures/Group.svg',
-                  width: 200,
-                ),
-                SizedBox(
-                  height: 0.04 * height,
-                ),
-                Center(
-                  child: Text(
-                    'Create account',
-                    style: blackbig,
-                  ),
-                ),
-                SizedBox(
-                  height: 0.05 * height,
-                ),
-                Container(
-                    height: 60,
-                    width: double.infinity,
-                    child: TextField(
-                      decoration: InputDecoration(
-                          hintText: 'Email address',
-                          border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(10))),
-                    )),
-                SizedBox(
-                  height: 0.03 * height,
-                ),
-                Container(
-                    height: 60,
-                    width: double.infinity,
-                    child: TextField(
-                      decoration: InputDecoration(
-                          hintText: 'Password',
-                          suffixIcon: Icon(Icons.remove_red_eye),
-                          border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(10))),
-                    )),
-                SizedBox(
-                  height: 0.03 * height,
-                ),
-                Container(
-                    height: 60,
-                    width: double.infinity,
-                    child: TextField(
-                      decoration: InputDecoration(
-                          hintText: 'Confirm password',
-                          suffixIcon: Icon(Icons.remove_red_eye),
-                          border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(10))),
-                    )),
-                GestureDetector(
-                    onTap: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) {
-                        return Choose();
-                      }));
-                    },
-                    child: YelloButton(title: 'Create account')),
-              ],
+            SizedBox(
+              height: 0.02 * height,
             ),
-            Align(
-              alignment: Alignment.bottomCenter,
-              child: Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 30, vertical: 5),
-                child: RichText(
-                  text: TextSpan(
-                    children: [
-                      TextSpan(
-                          text:
-                              'By creating an account or signing, you agree to our ',
-                          style: TextStyle(
-                            color: Color(0xffABABAB),
-                            fontFamily: 'Inter',
-                            fontSize: 14.0,
-                            fontStyle: FontStyle.normal,
-                            fontWeight: FontWeight.w500,
-                          )),
-                      TextSpan(
-                          text: 'Terms and Conditions.', style: blackmiddle),
-                    ],
-                  ),
+            SvgPicture.asset(
+              'assets/pictures/Group.svg',
+              width: 200,
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            const Text(
+              'Create account',
+              style: TextStyle(
+                color: Colors.black,
+                fontSize: 30,
+                fontFamily: 'Poppins',
+                fontWeight: FontWeight.w700,
+                letterSpacing: -0.30,
+              ),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            Container(
+              height: 56,
+              padding: const EdgeInsets.symmetric(
+                horizontal: 15,
+              ),
+              decoration: ShapeDecoration(
+                color: Colors.white,
+                shape: RoundedRectangleBorder(
+                  side: const BorderSide(width: 1, color: Color(0xFFD8DADC)),
+                  borderRadius: BorderRadius.circular(10),
                 ),
               ),
+              child: TextField(
+                decoration: InputDecoration(
+                    hintText: 'Email address',
+                    hintStyle: TextStyle(
+                      color: Colors.black.withOpacity(0.5),
+                      fontSize: 16,
+                      fontFamily: 'Inter',
+                      fontWeight: FontWeight.w400,
+                    ),
+                    // suffixIcon: const Icon(Icons.remove_red_eye),
+                    border: InputBorder.none),
+              ),
+            ),
+            const SizedBox(
+              height: 15,
+            ),
+            Container(
+              height: 56,
+              padding: const EdgeInsets.symmetric(
+                horizontal: 15,
+              ),
+              decoration: ShapeDecoration(
+                color: Colors.white,
+                shape: RoundedRectangleBorder(
+                  side: const BorderSide(width: 1, color: Color(0xFFD8DADC)),
+                  borderRadius: BorderRadius.circular(10),
+                ),
+              ),
+              child: TextField(
+                decoration: InputDecoration(
+                    hintText: 'Password',
+                    hintStyle: TextStyle(
+                      color: Colors.black.withOpacity(0.5),
+                      fontSize: 16,
+                      fontFamily: 'Inter',
+                      fontWeight: FontWeight.w400,
+                    ),
+                    suffixIcon: const Icon(Icons.remove_red_eye),
+                    border: InputBorder.none),
+              ),
+            ),
+            const SizedBox(
+              height: 15,
+            ),
+            Container(
+              height: 56,
+              padding: const EdgeInsets.symmetric(
+                horizontal: 15,
+              ),
+              decoration: ShapeDecoration(
+                color: Colors.white,
+                shape: RoundedRectangleBorder(
+                  side: const BorderSide(width: 1, color: Color(0xFFD8DADC)),
+                  borderRadius: BorderRadius.circular(10),
+                ),
+              ),
+              child: TextField(
+                decoration: InputDecoration(
+                    hintText: 'Confirm password',
+                    hintStyle: TextStyle(
+                      color: Colors.black.withOpacity(0.5),
+                      fontSize: 16,
+                      fontFamily: 'Inter',
+                      fontWeight: FontWeight.w400,
+                    ),
+                    suffixIcon: const Icon(Icons.remove_red_eye),
+                    border: InputBorder.none),
+              ),
+            ),
+            const SizedBox(
+              height: 30,
+            ),
+            GestureDetector(
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return const Choose();
+                  }));
+                },
+                child: const YelloButton(title: 'Create account')),
+            const Spacer(),
+            Text.rich(
+              TextSpan(
+                children: [
+                  TextSpan(
+                    text: 'By creating an account or signing you agree to our ',
+                    style: TextStyle(
+                      color: Colors.black.withOpacity(0.699999988079071),
+                      fontSize: 14,
+                      fontFamily: 'Inter',
+                      fontWeight: FontWeight.w400,
+                    ),
+                  ),
+                  const TextSpan(
+                    text: 'Terms and Conditions',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 14,
+                      fontFamily: 'Inter',
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                ],
+              ),
+              textAlign: TextAlign.center,
+            ),
+            const SizedBox(
+              height: 20,
             )
           ],
         ),

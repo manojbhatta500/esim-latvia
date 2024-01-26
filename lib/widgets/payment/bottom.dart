@@ -1,6 +1,5 @@
 import 'package:esim/utils/constants.dart';
 import 'package:esim/widgets/payment/show_payment.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class Bottom extends StatelessWidget {
@@ -13,7 +12,7 @@ class Bottom extends StatelessWidget {
     return Container(
       height: 0.11 * height,
       width: double.infinity,
-      color: Color(0xffFFFFFF),
+      color: const Color(0xffFFFFFF),
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 10.0),
         child: Row(
@@ -45,8 +44,8 @@ class Bottom extends StatelessWidget {
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(5),
                       border: Border.all(
-                          color: Color.fromRGBO(217, 217, 217, 0.95))),
-                  child: Center(
+                          color: const Color.fromRGBO(217, 217, 217, 0.95))),
+                  child: const Center(
                     child: Text(
                       'CHANGE METHOD',
                       style: TextStyle(fontSize: 10),
@@ -61,7 +60,7 @@ class Bottom extends StatelessWidget {
                         borderRadius: BorderRadius.circular(20.0),
                       ),
                       builder: (context) {
-                        return ShowPayment();
+                        return const ShowPayment();
                       },
                     );
                   },

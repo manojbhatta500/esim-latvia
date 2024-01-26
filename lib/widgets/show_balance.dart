@@ -1,4 +1,3 @@
-import 'package:esim/utils/constants.dart';
 import 'package:flutter/material.dart';
 
 class ShowBalance extends StatefulWidget {
@@ -14,31 +13,56 @@ class _ShowBalanceState extends State<ShowBalance> {
     return Container(
       child: Column(
         children: [
-          Row(
+          const Row(
             children: [
               Text(
                 'Balance:',
-                style: navigatorText,
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 12,
+                  fontFamily: 'Inter',
+                  fontWeight: FontWeight.w400,
+                  height: 0,
+                ),
               ),
               Text(
                 '54.3€',
-                style: blackbig,
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 24,
+                  fontFamily: 'Inter',
+                  fontWeight: FontWeight.w700,
+                  height: 0,
+                ),
               )
             ],
+          ),
+          const SizedBox(
+            height: 8,
           ),
           Align(
             alignment: Alignment.centerLeft,
             child: Container(
-              padding: EdgeInsets.symmetric(vertical: 10, horizontal: 5),
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(5),
-                  color: Color(0xffF6A84C)),
-              child: Text(
-                'Topup balance',
-                style: whitenormal,
+              width: 100,
+              height: 24,
+              decoration: ShapeDecoration(
+                color: const Color(0xFFF6A74B),
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(5)),
+              ),
+              child: const Center(
+                child: Text(
+                  'Topup balance',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 12,
+                    fontFamily: 'Inter',
+                    fontWeight: FontWeight.w400,
+                  ),
+                ),
               ),
             ),
-          )
+          ),
         ],
       ),
     );

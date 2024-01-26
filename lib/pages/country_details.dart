@@ -5,7 +5,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 class CountryDetails extends StatefulWidget {
   final String countrycode;
-  CountryDetails({required this.countrycode});
+  const CountryDetails({super.key, required this.countrycode});
 
   @override
   State<CountryDetails> createState() => _CountryDetailsState();
@@ -36,7 +36,7 @@ class _CountryDetailsState extends State<CountryDetails> {
         color: Colors.white,
         height: height,
         width: width,
-        padding: EdgeInsets.symmetric(vertical: 10, horizontal: 15),
+        padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -45,7 +45,7 @@ class _CountryDetailsState extends State<CountryDetails> {
                 '${countryNames[widget.countrycode]}',
                 style: blackbig,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
               CurrentCountry(
@@ -65,7 +65,7 @@ class _CountryDetailsState extends State<CountryDetails> {
                 timeleft: '45',
                 Price: '12.00',
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               )
             ],

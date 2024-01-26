@@ -4,8 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class CurrentCountry extends StatelessWidget {
-  CurrentCountry(
-      {required this.coverage,
+  const CurrentCountry(
+      {super.key,
+      required this.coverage,
       required this.remainingdata,
       required this.timeleft,
       required this.Price});
@@ -25,7 +26,7 @@ class CurrentCountry extends StatelessWidget {
         height: 0.30 * height,
         width: 0.9 * width,
         margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 5),
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
             gradient: LinearGradient(
               colors: [
                 Color(0xff082777),
@@ -44,7 +45,7 @@ class CurrentCountry extends StatelessWidget {
                   padding: EdgeInsets.symmetric(vertical: 15, horizontal: 15),
                   child: Row(
                     children: [
-                      const Image(
+                      Image(
                         image: AssetImage(
                           'assets/icons/antenna.png',
                         ),
@@ -76,7 +77,7 @@ class CurrentCountry extends StatelessWidget {
                           SvgPicture.asset(
                             'assets/icons/world.svg',
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: 10,
                           ),
                           Text(
@@ -100,12 +101,12 @@ class CurrentCountry extends StatelessWidget {
                     children: [
                       Row(
                         children: [
-                          Image(
+                          const Image(
                             image: AssetImage(
                               'assets/icons/data.png',
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: 10,
                           ),
                           Text(
@@ -132,7 +133,7 @@ class CurrentCountry extends StatelessWidget {
                           SvgPicture.asset(
                             'assets/icons/symbols.svg',
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: 10,
                           ),
                           Text(
@@ -157,7 +158,7 @@ class CurrentCountry extends StatelessWidget {
                 }));
               },
               child: Padding(
-                padding: EdgeInsets.symmetric(vertical: 15),
+                padding: const EdgeInsets.symmetric(vertical: 15),
                 child: Container(
                   height: 30,
                   width: 0.7 * width,

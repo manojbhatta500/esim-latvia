@@ -6,13 +6,15 @@ class Sano extends StatefulWidget {
       required this.data,
       required this.days,
       required this.price,
-      this.indicator = false});
+      this.indicator = false,
+      required this.onTap});
 
   final String data;
   final String days;
   final String price;
 
   bool indicator;
+  final VoidCallback onTap;
 
   @override
   State<Sano> createState() => _SanoState();
@@ -22,25 +24,18 @@ class _SanoState extends State<Sano> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
-        setState(() {
-          if (widget.indicator == false) {
-            widget.indicator = true;
-          } else {
-            widget.indicator = false;
-          }
-        });
-      },
+      onTap: widget.onTap,
       child: Container(
         height: 100,
         width: 70,
-        margin: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+        margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
         decoration: BoxDecoration(
             color: widget.indicator
                 ? Colors.amber
-                : Color.fromRGBO(217, 217, 217, 0.25),
+                : const Color.fromRGBO(217, 217, 217, 0.25),
             borderRadius: BorderRadius.circular(10),
-            border: Border.all(color: Color.fromRGBO(217, 217, 217, 0.75))),
+            border:
+                Border.all(color: const Color.fromRGBO(217, 217, 217, 0.75))),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
@@ -49,10 +44,10 @@ class _SanoState extends State<Sano> {
               decoration: BoxDecoration(
                   color: widget.indicator
                       ? Colors.amber
-                      : Color.fromRGBO(217, 217, 217, 0.75),
+                      : const Color.fromRGBO(217, 217, 217, 0.75),
                   borderRadius: BorderRadius.circular(10),
-                  border:
-                      Border.all(color: Color.fromRGBO(217, 217, 217, 0.75))),
+                  border: Border.all(
+                      color: const Color.fromRGBO(217, 217, 217, 0.75))),
               child: Center(
                   child: Text(
                 '${widget.data} Gb',
@@ -60,7 +55,7 @@ class _SanoState extends State<Sano> {
                     color: widget.indicator ? Colors.white : Colors.black),
               )),
             ),
-            Container(
+            SizedBox(
               height: 49,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -73,7 +68,7 @@ class _SanoState extends State<Sano> {
                               widget.indicator ? Colors.white : Colors.black),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 1,
                   ),
                   Center(
