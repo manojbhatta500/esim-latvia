@@ -9,7 +9,7 @@ class ReferContainer extends StatelessWidget {
       width: double.infinity,
       height: 85,
       decoration: ShapeDecoration(
-        gradient: LinearGradient(
+        gradient: const LinearGradient(
           begin: Alignment(1.00, -0.04),
           end: Alignment(-1, 0.04),
           colors: [Color(0xFFFFC194), Color(0xFFFF6F6F)],
@@ -23,7 +23,7 @@ class ReferContainer extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Column(
+            const Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -75,7 +75,7 @@ class ReferContainer extends StatelessWidget {
                   borderRadius: BorderRadius.circular(15),
                 ),
               ),
-              child: Center(
+              child: const Center(
                 child: Text(
                   'Get link',
                   style: TextStyle(

@@ -109,7 +109,7 @@ class _BuyDataState extends State<BuyData> {
                               const SizedBox(
                                 height: 10,
                               ),
-                              Text.rich(
+                              const Text.rich(
                                 TextSpan(
                                   children: [
                                     TextSpan(
@@ -169,7 +169,7 @@ class _BuyDataState extends State<BuyData> {
                                       const SizedBox(
                                         width: 10,
                                       ),
-                                      Text(
+                                      const Text(
                                         'Pay from your balance',
                                         style: TextStyle(
                                           color: Colors.black,
@@ -204,7 +204,7 @@ class _BuyDataState extends State<BuyData> {
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(10),
                             ),
-                            shadows: [
+                            shadows: const [
                               BoxShadow(
                                 color: Color(0x19000000),
                                 blurRadius: 10,
@@ -245,7 +245,7 @@ class _BuyDataState extends State<BuyData> {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               SvgPicture.asset('assets/pictures/phone.svg'),
-                              Text(
+                              const Text(
                                 'Esim only for internet (no phone number )',
                                 style: TextStyle(
                                   color: Colors.black,
@@ -257,7 +257,7 @@ class _BuyDataState extends State<BuyData> {
                             ],
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 10,
                         ),
                         Text.rich(
@@ -307,7 +307,7 @@ class _BuyDataState extends State<BuyData> {
                             ],
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 10,
                         ),
                         SizedBox(

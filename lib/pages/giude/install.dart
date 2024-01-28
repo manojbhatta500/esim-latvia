@@ -1,5 +1,4 @@
 import 'package:esim/pages/giude/fast.dart';
-import 'package:esim/utils/constants.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -34,11 +33,9 @@ class _InstallState extends State<Install> {
           ),
         ),
         body: Container(
-          color: Colors.white,
           width: double.infinity,
           height: double.infinity,
-          padding:
-              const EdgeInsets.only(top: 30, left: 15, right: 15, bottom: 10),
+          padding: const EdgeInsets.symmetric(horizontal: 20),
           child: SingleChildScrollView(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
@@ -47,26 +44,30 @@ class _InstallState extends State<Install> {
                 SizedBox(
                   height: 0.1 * height,
                 ),
-                Text(
-                  'Forgot password?',
-                  style: blackbig,
+                const Text(
+                  'How to install eSIM',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 20,
+                    fontFamily: 'Inter',
+                    fontWeight: FontWeight.w700,
+                    height: 0,
+                  ),
                 ),
                 SizedBox(
                   height: 0.02 * height,
                 ),
                 Container(
-                  margin:
-                      const EdgeInsets.symmetric(vertical: 3, horizontal: 10),
                   height: 40,
                   decoration: BoxDecoration(
-                      color: const Color(0xffD9D9D9),
+                      color: const Color(0x3FD9D9D9),
                       border: Border.all(color: Colors.black12),
                       borderRadius: BorderRadius.circular(10)),
                   child: TabBar(
                     indicator: BoxDecoration(
-                        borderRadius:
-                            BorderRadius.circular(10), // Creates border
+                        borderRadius: BorderRadius.circular(10),
                         color: const Color(0xffFFFFFF)),
+                    indicatorSize: TabBarIndicatorSize.tab,
                     tabs: const [
                       Tab(
                           child: Center(
@@ -74,10 +75,9 @@ class _InstallState extends State<Install> {
                         'Fast',
                         style: TextStyle(
                           color: Colors.black,
+                          fontSize: 12,
                           fontFamily: 'Inter',
-                          fontSize: 14.0,
-                          fontStyle: FontStyle.normal,
-                          fontWeight: FontWeight.w400,
+                          fontWeight: FontWeight.w700,
                         ),
                       ))),
                       Tab(
@@ -86,9 +86,8 @@ class _InstallState extends State<Install> {
                         'Manual',
                         style: TextStyle(
                           color: Colors.black,
+                          fontSize: 12,
                           fontFamily: 'Inter',
-                          fontSize: 14.0,
-                          fontStyle: FontStyle.normal,
                           fontWeight: FontWeight.w400,
                         ),
                       ))),
@@ -98,9 +97,8 @@ class _InstallState extends State<Install> {
                         'QR-code',
                         style: TextStyle(
                           color: Colors.black,
+                          fontSize: 12,
                           fontFamily: 'Inter',
-                          fontSize: 14.0,
-                          fontStyle: FontStyle.normal,
                           fontWeight: FontWeight.w400,
                         ),
                       ))),

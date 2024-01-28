@@ -92,7 +92,7 @@ class _ShopState extends State<Shop> {
                   const SizedBox(
                     height: 30,
                   ),
-                  ReferContainer(),
+                  const ReferContainer(),
                   const SizedBox(
                     height: 30,
                   ),
