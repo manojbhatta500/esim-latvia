@@ -49,11 +49,18 @@ class _SanoState extends State<Sano> {
                   border: Border.all(
                       color: const Color.fromRGBO(217, 217, 217, 0.75))),
               child: Center(
-                  child: Text(
-                '${widget.data} Gb',
-                style: TextStyle(
-                    color: widget.indicator ? Colors.white : Colors.black),
-              )),
+                child: Text(
+                  '${widget.data} Gb',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: widget.indicator ? Colors.white : Colors.black,
+                    fontSize: 12,
+                    fontFamily: 'Inter',
+                    fontWeight: FontWeight.w700,
+                    height: 0,
+                  ),
+                ),
+              ),
             ),
             SizedBox(
               height: 49,
@@ -74,9 +81,14 @@ class _SanoState extends State<Sano> {
                   Center(
                     child: Text(
                       '${widget.price} €',
+                      textAlign: TextAlign.center,
                       style: TextStyle(
-                          color:
-                              widget.indicator ? Colors.white : Colors.black),
+                        color: widget.indicator ? Colors.white : Colors.black,
+                        fontSize: 12,
+                        fontFamily: 'Inter',
+                        fontWeight: FontWeight.w700,
+                        height: 0,
+                      ),
                     ),
                   )
                 ],

@@ -25,6 +25,9 @@ class _ShowBalanceState extends State<ShowBalance> {
                   height: 0,
                 ),
               ),
+              SizedBox(
+                width: 5,
+              ),
               Text(
                 '54.3€',
                 style: TextStyle(

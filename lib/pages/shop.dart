@@ -1,5 +1,6 @@
 import 'package:esim/pages/country.dart';
 import 'package:esim/pages/profile.dart';
+import 'package:esim/widgets/refer_container/refer_container.dart';
 
 import 'package:esim/widgets/show_balance.dart';
 import 'package:flutter/material.dart';
@@ -88,6 +89,10 @@ class _ShopState extends State<Shop> {
                           border: InputBorder.none),
                     ),
                   ),
+                  const SizedBox(
+                    height: 30,
+                  ),
+                  ReferContainer(),
                   const SizedBox(
                     height: 30,
                   ),

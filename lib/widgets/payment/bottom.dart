@@ -10,7 +10,7 @@ class Bottom extends StatelessWidget {
     double height = MediaQuery.of(context).size.height;
 
     return Container(
-      height: 0.11 * height,
+      height: 100,
       width: double.infinity,
       color: const Color(0xffFFFFFF),
       child: Padding(
@@ -39,12 +39,17 @@ class Bottom extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Container(
+                  width: 130,
                   height: 20,
-                  width: 100,
-                  decoration: BoxDecoration(
+                  decoration: ShapeDecoration(
+                    shape: RoundedRectangleBorder(
+                      side: BorderSide(
+                        width: 1,
+                        color: Colors.black.withOpacity(0.25),
+                      ),
                       borderRadius: BorderRadius.circular(5),
-                      border: Border.all(
-                          color: const Color.fromRGBO(217, 217, 217, 0.95))),
+                    ),
+                  ),
                   child: const Center(
                     child: Text(
                       'CHANGE METHOD',
@@ -64,18 +69,25 @@ class Bottom extends StatelessWidget {
                       },
                     );
                   },
-                  child: Card(
-                    elevation: 6,
-                    child: Container(
-                      height: 35,
-                      width: 100,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(5),
-                        border: Border.all(color: Colors.white54),
+                  child: Container(
+                    height: 42,
+                    width: 130,
+                    decoration: ShapeDecoration(
+                      color: Colors.white,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
                       ),
-                      child: Center(
-                          child: Image.asset('assets/pictures/apple_pay.png')),
+                      shadows: [
+                        BoxShadow(
+                          color: Color(0x19000000),
+                          blurRadius: 15,
+                          offset: Offset(0, 0),
+                          spreadRadius: 0,
+                        )
+                      ],
                     ),
+                    child: Center(
+                        child: Image.asset('assets/pictures/apple_pay.png')),
                   ),
                 ),
               ],

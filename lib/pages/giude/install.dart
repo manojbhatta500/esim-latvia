@@ -37,7 +37,8 @@ class _InstallState extends State<Install> {
           color: Colors.white,
           width: double.infinity,
           height: double.infinity,
-          padding: const EdgeInsets.only(top: 30, left: 15, right: 15, bottom: 10),
+          padding:
+              const EdgeInsets.only(top: 30, left: 15, right: 15, bottom: 10),
           child: SingleChildScrollView(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
@@ -54,7 +55,8 @@ class _InstallState extends State<Install> {
                   height: 0.02 * height,
                 ),
                 Container(
-                  margin: const EdgeInsets.symmetric(vertical: 3, horizontal: 10),
+                  margin:
+                      const EdgeInsets.symmetric(vertical: 3, horizontal: 10),
                   height: 40,
                   decoration: BoxDecoration(
                       color: const Color(0xffD9D9D9),

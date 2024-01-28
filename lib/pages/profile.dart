@@ -1,4 +1,5 @@
 import 'package:esim/utils/constants.dart';
+import 'package:esim/widgets/refer_container/refer_container.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -30,8 +31,7 @@ class _ProfileState extends State<Profile> {
       ),
       body: Container(
         color: Colors.white,
-        padding:
-            const EdgeInsets.only(top: 30, left: 15, right: 15, bottom: 10),
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -40,7 +40,11 @@ class _ProfileState extends State<Profile> {
               style: blackbig,
             ),
             const SizedBox(
-              height: 50,
+              height: 30,
+            ),
+            ReferContainer(),
+            const SizedBox(
+              height: 30,
             ),
             Container(
               margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 5),
