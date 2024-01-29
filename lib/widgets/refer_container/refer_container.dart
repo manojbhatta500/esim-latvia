@@ -9,11 +9,7 @@ class ReferContainer extends StatelessWidget {
       width: double.infinity,
       height: 85,
       decoration: ShapeDecoration(
-        gradient: const LinearGradient(
-          begin: Alignment(1.00, -0.04),
-          end: Alignment(-1, 0.04),
-          colors: [Color(0xFFFFC194), Color(0xFFFF6F6F)],
-        ),
+        image: DecorationImage(image: AssetImage('assets/pictures/banner.png')),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10),
         ),
