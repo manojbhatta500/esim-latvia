@@ -9,7 +9,7 @@ class ReferContainer extends StatelessWidget {
       width: double.infinity,
       height: 85,
       decoration: ShapeDecoration(
-        image: DecorationImage(image: AssetImage('assets/pictures/banner.png')),
+        image: const DecorationImage(image: AssetImage('assets/pictures/banner.png')),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10),
         ),
