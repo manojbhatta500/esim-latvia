@@ -36,7 +36,7 @@ class _ChooseState extends State<Choose> {
               height: 20,
             ),
             SvgPicture.asset(
-              'assets/pictures/Group.svg',
+              'assets/pictures/official_logo.svg',
               width: 200,
             ),
             const SizedBox(

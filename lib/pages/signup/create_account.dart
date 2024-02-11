@@ -35,7 +35,7 @@ class _CreateAccountState extends State<CreateAccount> {
               height: 0.02 * height,
             ),
             SvgPicture.asset(
-              'assets/pictures/Group.svg',
+              'assets/pictures/official_logo.svg',
               width: 200,
             ),
             const SizedBox(
