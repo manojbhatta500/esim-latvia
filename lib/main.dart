@@ -1,12 +1,12 @@
-import 'package:esim/pages/giude/install.dart';
-import 'package:esim/pages/help.dart';
-import 'package:esim/pages/home.dart';
-import 'package:esim/pages/internet.dart';
+import 'package:esim/features/giude/screens/install.dart';
+import 'package:esim/features/help/screens/help.dart';
+import 'package:esim/features/home/screens/home.dart';
+import 'package:esim/features/internet/screens/internet.dart';
 
-import 'package:esim/pages/purchase_history/purchase.dart';
-import 'package:esim/pages/signup/choose.dart';
-import 'package:esim/pages/signup/create_account.dart';
-import 'package:esim/pages/signup/password_changed.dart';
+import 'package:esim/features/purchase_history/screens/purchase.dart';
+import 'package:esim/features/signup/pages/choose.dart';
+import 'package:esim/features/signup/pages/create_account.dart';
+import 'package:esim/features/signup/pages/password_changed.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -20,6 +20,7 @@ class Root extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      // home: CreateAccount(),
       initialRoute: '/pc',
       routes: {
         '/': (context) => const Home(),
