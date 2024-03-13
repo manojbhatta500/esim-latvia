@@ -1,5 +1,5 @@
 import 'package:esim/features/home/screens/home.dart';
-import 'package:esim/features/signup/widgets/company.dart';
+import 'package:esim/features/auth/widgets/company.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -35,10 +35,6 @@ class _ChooseState extends State<Choose> {
             const SizedBox(
               height: 20,
             ),
-            // SvgPicture.asset(
-            //   'assets/pictures/official_logo.svg',
-            //   width: 200,
-            // ),
             Image.asset(
               'assets/pictures/air.png',
               width: 200,
@@ -46,31 +42,8 @@ class _ChooseState extends State<Choose> {
             const SizedBox(
               height: 15,
             ),
-            const Text(
-              'eSIM APP',
-              style: TextStyle(
-                color: Colors.black,
-                fontSize: 30,
-                fontFamily: 'Poppins',
-                fontWeight: FontWeight.w700,
-                letterSpacing: -0.30,
-              ),
-            ),
             const SizedBox(
               height: 10,
-            ),
-            SizedBox(
-              width: 319,
-              child: Text(
-                'Now your finances are in one place and always under control',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  color: Colors.black.withOpacity(0.699999988079071),
-                  fontSize: 16,
-                  fontFamily: 'Inter',
-                  fontWeight: FontWeight.w400,
-                ),
-              ),
             ),
             SizedBox(
               height: 0.03 * height,

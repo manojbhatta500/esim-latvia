@@ -1,5 +1,6 @@
 import 'package:esim/features/home/screens/home.dart';
-import 'package:esim/features/signup/widgets/yello_button.dart';
+import 'package:esim/features/auth/pages/create_account.dart';
+import 'package:esim/features/auth/widgets/yello_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -113,7 +114,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
             GestureDetector(
                 onTap: () {
                   Navigator.push(context, MaterialPageRoute(builder: (context) {
-                    return const Home();
+                    return const CreateAccount();
                   }));
                 },
                 child: const YelloButton(title: 'Send code')),

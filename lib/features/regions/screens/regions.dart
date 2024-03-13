@@ -1,3 +1,4 @@
+import 'package:esim/features/regions/screens/Regions_package_screen.dart';
 import 'package:esim/features/regions/widgets/Regional_holder.dart';
 import 'package:flutter/material.dart';
 
@@ -37,7 +38,15 @@ class Regions extends StatelessWidget {
                   child: ListView.builder(
                       itemCount: 10,
                       itemBuilder: (context, index) {
-                        return const RegionalHolder();
+                        return GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          RegionPackageList()));
+                            },
+                            child: const RegionalHolder());
                       }))
             ],
           ),

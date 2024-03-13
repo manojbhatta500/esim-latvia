@@ -1,6 +1,6 @@
-import 'package:esim/features/signup/pages/pin_code.dart';
+import 'package:esim/features/auth/pages/pin_code.dart';
 import 'package:esim/utils/constants.dart';
-import 'package:esim/features/signup/widgets/yello_button.dart';
+import 'package:esim/features/auth/widgets/yello_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
