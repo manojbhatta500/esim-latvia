@@ -1,7 +1,10 @@
+import 'package:esim/features/auth/blocs/signinbloc/signin_bloc.dart';
 import 'package:esim/features/auth/pages/choose.dart';
 import 'package:esim/features/auth/widgets/yello_button.dart';
+import 'package:flutter/cupertino.dart';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class CreateAccount extends StatefulWidget {
@@ -12,6 +15,20 @@ class CreateAccount extends StatefulWidget {
 }
 
 class _CreateAccountState extends State<CreateAccount> {
+  TextEditingController emailController = TextEditingController();
+  TextEditingController nameController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+
+  bool showtext = false;
+
+  @override
+  void dispose() {
+    emailController.clear();
+    nameController.clear();
+    passwordController.clear();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
@@ -35,10 +52,6 @@ class _CreateAccountState extends State<CreateAccount> {
             SizedBox(
               height: 0.02 * height,
             ),
-            // SvgPicture.asset(
-            //   'assets/pictures/air.png',
-            //   width: 200,
-            // ),
             Image.asset(
               'assets/pictures/air.png',
               width: 200,
@@ -72,6 +85,7 @@ class _CreateAccountState extends State<CreateAccount> {
                 ),
               ),
               child: TextField(
+                controller: emailController,
                 decoration: InputDecoration(
                     hintText: 'Email address',
                     hintStyle: TextStyle(
@@ -80,7 +94,6 @@ class _CreateAccountState extends State<CreateAccount> {
                       fontFamily: 'Inter',
                       fontWeight: FontWeight.w400,
                     ),
-                    // suffixIcon: const Icon(Icons.remove_red_eye),
                     border: InputBorder.none),
               ),
             ),
@@ -100,15 +113,15 @@ class _CreateAccountState extends State<CreateAccount> {
                 ),
               ),
               child: TextField(
+                controller: nameController,
                 decoration: InputDecoration(
-                    hintText: 'Password',
+                    hintText: 'Name',
                     hintStyle: TextStyle(
                       color: Colors.black.withOpacity(0.5),
                       fontSize: 16,
                       fontFamily: 'Inter',
                       fontWeight: FontWeight.w400,
                     ),
-                    suffixIcon: const Icon(Icons.remove_red_eye),
                     border: InputBorder.none),
               ),
             ),
@@ -128,28 +141,64 @@ class _CreateAccountState extends State<CreateAccount> {
                 ),
               ),
               child: TextField(
+                controller: passwordController,
+                obscureText: showtext,
                 decoration: InputDecoration(
-                    hintText: 'Confirm password',
+                    hintText: 'password',
                     hintStyle: TextStyle(
                       color: Colors.black.withOpacity(0.5),
                       fontSize: 16,
                       fontFamily: 'Inter',
                       fontWeight: FontWeight.w400,
                     ),
-                    suffixIcon: const Icon(Icons.remove_red_eye),
+                    suffixIcon: IconButton(
+                        onPressed: () {
+                          setState(() {
+                            if (!showtext) {
+                              showtext = true;
+                            } else {
+                              showtext = false;
+                            }
+                          });
+                        },
+                        icon: showtext
+                            ? Icon(Icons.lock)
+                            : Icon(Icons.remove_red_eye)),
                     border: InputBorder.none),
               ),
             ),
             const SizedBox(
               height: 30,
             ),
-            GestureDetector(
-                onTap: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) {
-                    return const Choose();
-                  }));
-                },
-                child: const YelloButton(title: 'Create account')),
+            BlocConsumer<SigninBloc, SigninState>(
+              listener: (context, state) {
+                switch (state.runtimeType) {
+                  case SigninFailedState:
+                    final failedstate = state as SigninFailedState;
+
+                    ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(content: Text(failedstate.errorMessage)));
+                  case SigninSuccessState:
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return const Choose();
+                    }));
+
+                  default:
+                }
+              },
+              builder: (context, state) {
+                return GestureDetector(
+                    onTap: () {
+                      BlocProvider.of<SigninBloc>(context).add(
+                          OnSignInButtonPressed(
+                              email: emailController.text,
+                              name: nameController.text,
+                              password: passwordController.text));
+                    },
+                    child: YelloButton(title: 'Create account'));
+              },
+            ),
             const Spacer(),
             Text.rich(
               TextSpan(

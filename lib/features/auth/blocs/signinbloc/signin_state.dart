@@ -9,6 +9,14 @@ sealed class SigninState extends Equatable {
 
 final class SigninInitial extends SigninState {}
 
+final class SigninProcessingState extends SigninState {}
+
 final class SigninSuccessState extends SigninState {}
 
-final class SigninFailedState extends SigninState {}
+final class SigninFailedState extends SigninState {
+  String errorMessage;
+
+  SigninFailedState({required this.errorMessage});
+  @override
+  List<Object> get props => [errorMessage];
+}

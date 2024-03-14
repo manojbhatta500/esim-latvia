@@ -1,7 +1,10 @@
 import 'dart:async';
+import 'dart:developer';
 
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
+import 'package:esim/features/auth/repos/signin_repo.dart';
+import 'package:esim/utils/access_token.dart';
 
 part 'signin_event.dart';
 part 'signin_state.dart';
@@ -11,6 +14,21 @@ class SigninBloc extends Bloc<SigninEvent, SigninState> {
     on<OnSignInButtonPressed>(_onSignInButtonPressed);
   }
 
+  SignInRepository blocManager = SignInRepository();
+
   FutureOr<void> _onSignInButtonPressed(
-      OnSignInButtonPressed event, Emitter<SigninState> emit) {}
+      OnSignInButtonPressed event, Emitter<SigninState> emit) async {
+    emit(SigninProcessingState());
+
+    final repoResponse = await blocManager.signInAction(
+        email: event.email, name: event.name, password: event.password);
+    repoResponse.fold((l) {
+      String errormessage = l.message!;
+      emit(SigninFailedState(errorMessage: errormessage));
+    }, (r) {
+      AccessToken.accessToken = r.data!.token!;
+      log("this si my bloc state successtoken ${AccessToken.accessToken}");
+      emit(SigninSuccessState());
+    });
+  }
 }
