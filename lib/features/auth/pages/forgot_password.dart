@@ -1,3 +1,5 @@
+import 'package:esim/features/auth/pages/login_screen.dart';
+import 'package:esim/features/auth/pages/pin_code.dart';
 import 'package:esim/features/home/screens/home.dart';
 import 'package:esim/features/auth/pages/create_account.dart';
 import 'package:esim/features/auth/widgets/yello_button.dart';
@@ -114,7 +116,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
             GestureDetector(
                 onTap: () {
                   Navigator.push(context, MaterialPageRoute(builder: (context) {
-                    return const CreateAccount();
+                    return const PinCode();
                   }));
                 },
                 child: const YelloButton(title: 'Send code')),
@@ -126,28 +128,34 @@ class _ForgotPasswordState extends State<ForgotPassword> {
         color: Colors.white,
         child: Align(
           alignment: Alignment.topCenter,
-          child: Text.rich(
-            TextSpan(
-              children: [
-                TextSpan(
-                  text: 'Remember password? ',
-                  style: TextStyle(
-                    color: Colors.black.withOpacity(0.699999988079071),
-                    fontSize: 14,
-                    fontFamily: 'Inter',
-                    fontWeight: FontWeight.w400,
+          child: GestureDetector(
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => LoginScreen()));
+            },
+            child: Text.rich(
+              TextSpan(
+                children: [
+                  TextSpan(
+                    text: 'Remember password? ',
+                    style: TextStyle(
+                      color: Colors.black.withOpacity(0.699999988079071),
+                      fontSize: 14,
+                      fontFamily: 'Inter',
+                      fontWeight: FontWeight.w400,
+                    ),
                   ),
-                ),
-                const TextSpan(
-                  text: ' Log in',
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 14,
-                    fontFamily: 'Inter',
-                    fontWeight: FontWeight.w600,
+                  const TextSpan(
+                    text: ' Log in',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 14,
+                      fontFamily: 'Inter',
+                      fontWeight: FontWeight.w600,
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
         ),

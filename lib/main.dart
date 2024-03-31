@@ -1,4 +1,9 @@
 import 'package:esim/features/auth/blocs/signinbloc/signin_bloc.dart';
+import 'package:esim/features/auth/pages/choose_option.dart';
+import 'package:esim/features/auth/pages/forgot_password.dart';
+import 'package:esim/features/auth/pages/login_screen.dart';
+import 'package:esim/features/auth/pages/pin_code.dart';
+import 'package:esim/features/auth/pages/reset_password.dart';
 import 'package:esim/features/giude/screens/install.dart';
 import 'package:esim/features/help/screens/help.dart';
 import 'package:esim/features/home/screens/home.dart';
@@ -23,17 +28,19 @@ class Root extends StatelessWidget {
       create: (context) => SigninBloc(),
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        initialRoute: '/pc',
-        routes: {
-          '/': (context) => const Home(),
-          '/internet': (context) => const Internet(),
-          '/help': (context) => const Help(),
-          '/pc': (context) => const PasswrodChanged(),
-          '/create_account': (context) => CreateAccount(),
-          '/choose': (context) => const Choose(),
-          '/install': (context) => const Install(),
-          '/purchase': (context) => const Purchase(),
-        },
+        home: ChooseOption(),
+
+        // initialRoute: '/pc',
+        // routes: {
+        //   '/': (context) => const Home(),
+        //   '/internet': (context) => const Internet(),
+        //   '/help': (context) => const Help(),
+        //   '/pc': (context) => const PasswrodChanged(),
+        //   '/create_account': (context) => CreateAccount(),
+        //   '/choose': (context) => const Choose(),
+        //   '/install': (context) => const Install(),
+        //   '/purchase': (context) => const Purchase(),
+        // },
       ),
     );
   }

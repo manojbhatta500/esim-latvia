@@ -1,3 +1,4 @@
+import 'package:esim/features/auth/pages/password_changed.dart';
 import 'package:esim/features/auth/pages/pin_code.dart';
 import 'package:esim/utils/constants.dart';
 import 'package:esim/features/auth/widgets/yello_button.dart';
@@ -146,7 +147,7 @@ class _ResetPasswordState extends State<ResetPassword> {
                   onTap: () {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) {
-                      return const PinCode();
+                      return const PasswrodChanged();
                     }));
                   },
                   child: const YelloButton(title: 'Reset password')),
@@ -154,37 +155,37 @@ class _ResetPasswordState extends State<ResetPassword> {
           ),
         ),
       ),
-      bottomNavigationBar: Container(
-        height: 50,
-        color: Colors.white,
-        child: Align(
-          alignment: Alignment.topCenter,
-          child: Text.rich(
-            TextSpan(
-              children: [
-                TextSpan(
-                  text: 'Already have an account? ',
-                  style: TextStyle(
-                    color: Colors.black.withOpacity(0.699999988079071),
-                    fontSize: 14,
-                    fontFamily: 'Inter',
-                    fontWeight: FontWeight.w400,
-                  ),
-                ),
-                const TextSpan(
-                  text: 'Log in',
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 14,
-                    fontFamily: 'Inter',
-                    fontWeight: FontWeight.w600,
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ),
-      ),
+      // bottomNavigationBar: Container(
+      //   height: 50,
+      //   color: Colors.white,
+      //   child: Align(
+      //     alignment: Alignment.topCenter,
+      //     child: Text.rich(
+      //       TextSpan(
+      //         children: [
+      //           TextSpan(
+      //             text: 'Already have an account? ',
+      //             style: TextStyle(
+      //               color: Colors.black.withOpacity(0.699999988079071),
+      //               fontSize: 14,
+      //               fontFamily: 'Inter',
+      //               fontWeight: FontWeight.w400,
+      //             ),
+      //           ),
+      //           const TextSpan(
+      //             text: 'Log in',
+      //             style: TextStyle(
+      //               color: Colors.black,
+      //               fontSize: 14,
+      //               fontFamily: 'Inter',
+      //               fontWeight: FontWeight.w600,
+      //             ),
+      //           ),
+      //         ],
+      //       ),
+      //     ),
+      //   ),
+      // ),
     ));
   }
 }

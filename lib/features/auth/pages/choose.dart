@@ -1,6 +1,9 @@
+import 'package:esim/features/auth/pages/create_account.dart';
+import 'package:esim/features/auth/pages/login_screen.dart';
 import 'package:esim/features/home/screens/home.dart';
 import 'package:esim/features/auth/widgets/company.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class Choose extends StatefulWidget {
@@ -60,9 +63,15 @@ class _ChooseState extends State<Choose> {
             SizedBox(
               height: 0.01 * height,
             ),
-            const Company(
-                image: 'assets/pictures/Message.svg',
-                text: 'Continue with Email'),
+            GestureDetector(
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => CreateAccount()));
+              },
+              child: const Company(
+                  image: 'assets/pictures/Message.svg',
+                  text: 'Continue with Email'),
+            ),
           ],
         ),
       ),
@@ -72,7 +81,7 @@ class _ChooseState extends State<Choose> {
         child: GestureDetector(
           onTap: () {
             Navigator.push(context, MaterialPageRoute(builder: (context) {
-              return const Home();
+              return const LoginScreen();
             }));
           },
           child: Center(

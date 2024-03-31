@@ -1,3 +1,4 @@
+import 'package:esim/features/auth/pages/login_screen.dart';
 import 'package:esim/features/auth/pages/reset_password.dart';
 import 'package:esim/features/auth/widgets/yello_button.dart';
 import 'package:flutter/material.dart';
@@ -62,7 +63,7 @@ class _PasswrodChangedState extends State<PasswrodChanged> {
             GestureDetector(
                 onTap: () {
                   Navigator.push(context, MaterialPageRoute(builder: (context) {
-                    return const ResetPassword();
+                    return const LoginScreen();
                   }));
                 },
                 child: const YelloButton(title: 'Back to login'))

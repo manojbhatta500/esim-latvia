@@ -1,4 +1,5 @@
 import 'package:esim/features/auth/pages/forgot_password.dart';
+import 'package:esim/features/auth/pages/reset_password.dart';
 import 'package:esim/features/auth/widgets/yello_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -103,8 +104,10 @@ class _PinCodeState extends State<PinCode> {
                   onTap: () {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) {
-                      return const ForgotPassword();
+                      return const ResetPassword();
                     }));
+
+                    //  successfull then go to another screen
                   },
                   child: const YelloButton(title: 'Verify')),
               const SizedBox(

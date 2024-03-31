@@ -1,6 +1,6 @@
 class GlobalApis {
   // base url api
-  static String baseUrl = 'http://127.0.0.1:8000';
+  static String baseUrl = 'http://18.199.141.222';
 
   // signup api
 

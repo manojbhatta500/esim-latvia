@@ -1,5 +1,6 @@
 import 'package:esim/features/auth/blocs/signinbloc/signin_bloc.dart';
 import 'package:esim/features/auth/pages/choose.dart';
+import 'package:esim/features/auth/pages/login_screen.dart';
 import 'package:esim/features/auth/widgets/yello_button.dart';
 import 'package:flutter/cupertino.dart';
 
@@ -181,7 +182,7 @@ class _CreateAccountState extends State<CreateAccount> {
                   case SigninSuccessState:
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) {
-                      return const Choose();
+                      return const LoginScreen();
                     }));
 
                   default:
