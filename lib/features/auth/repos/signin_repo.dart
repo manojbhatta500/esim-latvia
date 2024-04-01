@@ -35,6 +35,7 @@ class SignInRepository {
       } else {
         log(response.statusCode.toString());
         log('signin Repository class else method not 200');
+        log('this is actual failed ressponse : ${response.body}');
         var actualfaileddata = jsonDecode(response.body);
         var failedmodel = SignInFaileModel.fromJson(actualfaileddata);
         return Left(failedmodel);

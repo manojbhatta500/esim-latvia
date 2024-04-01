@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:esim/features/auth/blocs/signinbloc/signin_bloc.dart';
 import 'package:esim/features/auth/pages/choose.dart';
 import 'package:esim/features/auth/pages/login_screen.dart';
@@ -173,19 +175,20 @@ class _CreateAccountState extends State<CreateAccount> {
             ),
             BlocConsumer<SigninBloc, SigninState>(
               listener: (context, state) {
-                switch (state.runtimeType) {
-                  case SigninFailedState:
-                    final failedstate = state as SigninFailedState;
-
-                    ScaffoldMessenger.of(context).showSnackBar(
-                        SnackBar(content: Text(failedstate.errorMessage)));
-                  case SigninSuccessState:
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) {
-                      return const LoginScreen();
-                    }));
-
-                  default:
+                if (state is SigninSuccessState) {
+                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                    content: Text('Successfully created account'),
+                    backgroundColor: Colors.green,
+                  ));
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const LoginScreen()));
+                } else if (state is SigninFailedState) {
+                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                    content: Text(state.errorMessage),
+                    backgroundColor: Colors.red,
+                  ));
                 }
               },
               builder: (context, state) {
