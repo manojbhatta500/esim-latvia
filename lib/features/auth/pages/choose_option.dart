@@ -1,8 +1,6 @@
 import 'package:esim/features/auth/pages/choose.dart';
 import 'package:esim/features/auth/pages/login_screen.dart';
-import 'package:esim/features/auth/pages/reset_password.dart';
 import 'package:esim/features/auth/widgets/yello_button.dart';
-import 'package:esim/utils/constants.dart';
 import 'package:flutter/material.dart';
 
 class ChooseOption extends StatelessWidget {
@@ -39,7 +37,7 @@ class ChooseOption extends StatelessWidget {
             GestureDetector(
                 onTap: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => LoginScreen()));
+                      MaterialPageRoute(builder: (context) => const LoginScreen()));
                 },
                 child: const YelloButton(title: 'Login')),
             const SizedBox(
@@ -48,7 +46,7 @@ class ChooseOption extends StatelessWidget {
             GestureDetector(
                 onTap: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => Choose()));
+                      MaterialPageRoute(builder: (context) => const Choose()));
                 },
                 child: const YelloButton(title: 'Signup')),
             const Spacer(),

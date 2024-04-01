@@ -1,4 +1,3 @@
-import 'package:esim/features/auth/pages/forgot_password.dart';
 import 'package:esim/features/auth/pages/reset_password.dart';
 import 'package:esim/features/auth/widgets/yello_button.dart';
 import 'package:flutter/material.dart';
@@ -22,7 +21,6 @@ class _PinCodeState extends State<PinCode> {
     return SafeArea(
         child: Scaffold(
       appBar: AppBar(
-        elevation: 0,
         backgroundColor: Colors.white,
         automaticallyImplyLeading: false,
         leading: GestureDetector(

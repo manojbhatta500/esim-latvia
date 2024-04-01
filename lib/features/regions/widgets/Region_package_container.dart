@@ -154,7 +154,7 @@ class RegionPackageContainer extends StatelessWidget {
             GestureDetector(
               onTap: () {
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => BuyRegionData()));
+                    MaterialPageRoute(builder: (context) => const BuyRegionData()));
               },
               child: Padding(
                 padding: const EdgeInsets.symmetric(vertical: 15),

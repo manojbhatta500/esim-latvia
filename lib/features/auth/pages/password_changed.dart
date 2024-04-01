@@ -1,5 +1,4 @@
 import 'package:esim/features/auth/pages/login_screen.dart';
-import 'package:esim/features/auth/pages/reset_password.dart';
 import 'package:esim/features/auth/widgets/yello_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';

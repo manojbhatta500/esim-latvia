@@ -1,7 +1,5 @@
 import 'package:esim/features/auth/pages/login_screen.dart';
 import 'package:esim/features/auth/pages/pin_code.dart';
-import 'package:esim/features/home/screens/home.dart';
-import 'package:esim/features/auth/pages/create_account.dart';
 import 'package:esim/features/auth/widgets/yello_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -131,7 +129,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
           child: GestureDetector(
             onTap: () {
               Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => LoginScreen()));
+                  MaterialPageRoute(builder: (context) => const LoginScreen()));
             },
             child: Text.rich(
               TextSpan(

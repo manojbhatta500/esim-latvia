@@ -1,5 +1,4 @@
 import 'package:esim/features/auth/pages/password_changed.dart';
-import 'package:esim/features/auth/pages/pin_code.dart';
 import 'package:esim/utils/constants.dart';
 import 'package:esim/features/auth/widgets/yello_button.dart';
 import 'package:flutter/material.dart';

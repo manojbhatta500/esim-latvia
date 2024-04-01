@@ -1,11 +1,7 @@
 import 'package:esim/features/auth/pages/choose.dart';
-import 'package:esim/features/auth/pages/create_account.dart';
 import 'package:esim/features/auth/pages/forgot_password.dart';
 import 'package:esim/features/auth/widgets/yello_button.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:flutter_svg/svg.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -134,8 +130,8 @@ class _LoginScreenState extends State<LoginScreen> {
                           }
                         },
                         icon: showPassword
-                            ? Icon(Icons.visibility_off)
-                            : Icon(Icons.visibility)),
+                            ? const Icon(Icons.visibility_off)
+                            : const Icon(Icons.visibility)),
                     hintText: 'Password',
                     hintStyle: TextStyle(
                       color: Colors.black.withOpacity(0.5),
@@ -157,9 +153,9 @@ class _LoginScreenState extends State<LoginScreen> {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => ForgotPassword()));
+                          builder: (context) => const ForgotPassword()));
                 },
-                child: Text('Forgot password ?'))
+                child: const Text('Forgot password ?'))
           ],
         ),
       ),
@@ -171,7 +167,7 @@ class _LoginScreenState extends State<LoginScreen> {
           child: GestureDetector(
             onTap: () {
               Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => Choose()));
+                  context, MaterialPageRoute(builder: (context) => const Choose()));
             },
             child: Text.rich(
               TextSpan(

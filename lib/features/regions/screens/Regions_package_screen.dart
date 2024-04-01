@@ -1,4 +1,3 @@
-import 'package:esim/features/Country_tab/widgets/current_country.dart';
 import 'package:esim/features/regions/widgets/Region_package_container.dart';
 import 'package:esim/utils/constants.dart';
 import 'package:flutter/material.dart';
@@ -43,7 +42,7 @@ class RegionPackageList extends StatelessWidget {
               const SizedBox(
                 height: 30,
               ),
-              RegionPackageContainer(
+              const RegionPackageContainer(
                   coverage: 'Africa',
                   remainingdata: '1',
                   timeleft: '10',
@@ -51,7 +50,7 @@ class RegionPackageList extends StatelessWidget {
               const SizedBox(
                 height: 20,
               ),
-              RegionPackageContainer(
+              const RegionPackageContainer(
                   coverage: 'Africa',
                   remainingdata: '1',
                   timeleft: '10',
@@ -59,7 +58,7 @@ class RegionPackageList extends StatelessWidget {
               const SizedBox(
                 height: 20,
               ),
-              RegionPackageContainer(
+              const RegionPackageContainer(
                   coverage: 'Africa',
                   remainingdata: '1',
                   timeleft: '10',

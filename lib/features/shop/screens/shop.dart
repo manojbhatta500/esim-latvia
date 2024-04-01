@@ -5,7 +5,6 @@ import 'package:esim/features/profile/widgets/refer_container.dart';
 
 import 'package:esim/gloabal_widegts/show_balance.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class Shop extends StatefulWidget {
   const Shop({Key? key}) : super(key: key);
@@ -47,11 +46,11 @@ class _ShopState extends State<Shop> {
                       //   FontAwesomeIcons.bell,
                       //   size: 30,
                       // ),
-                      Icon(
+                      const Icon(
                         Icons.notifications_active_outlined,
                         size: 30,
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 10,
                       ),
                       GestureDetector(

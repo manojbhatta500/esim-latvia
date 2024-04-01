@@ -1,10 +1,7 @@
 import 'package:esim/features/auth/pages/create_account.dart';
 import 'package:esim/features/auth/pages/login_screen.dart';
-import 'package:esim/features/home/screens/home.dart';
 import 'package:esim/features/auth/widgets/company.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class Choose extends StatefulWidget {
   const Choose({super.key});
@@ -66,7 +63,7 @@ class _ChooseState extends State<Choose> {
             GestureDetector(
               onTap: () {
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => CreateAccount()));
+                    MaterialPageRoute(builder: (context) => const CreateAccount()));
               },
               child: const Company(
                   image: 'assets/pictures/Message.svg',

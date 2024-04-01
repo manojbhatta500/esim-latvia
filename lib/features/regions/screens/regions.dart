@@ -44,7 +44,7 @@ class Regions extends StatelessWidget {
                                   context,
                                   MaterialPageRoute(
                                       builder: (context) =>
-                                          RegionPackageList()));
+                                          const RegionPackageList()));
                             },
                             child: const RegionalHolder());
                       }))
